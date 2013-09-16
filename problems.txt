@@ -1,0 +1,30 @@
+Found here: https://sites.google.com/site/steveyegge2/five-essential-phone-screen-questions
+
+1. Write a function to reverse a string
+2. Write a function to compute Nth fibonacci number
+3. Print out multiplication table up to 12x12
+4. Write a function that sums up integers from a text file, one int per line
+5. Write a function to print the odd numbers from 1-99
+6. Find the largest int value in an int array
+7. Format an RGB value (three 1-byte numbers) as a 6 digit hex string
+
+===========================================
+
+Implement merge sort and quick sort
+
+===========================================
+
+Know how to explain tsp/knapsack/np complete
+
+===========================================
+
+Know how to make a hashtable.**** ABSOLUTELY NEED TO KNOW
+
+===========================================
+
+Trees and graphs... definitely know AVL trees, and n-ary and construction as well as the tree traversal algorithms. BFS and DFS. Know pre/in/post order as well.
+
+===========================================
+
+Brush up on threads/concurrency & deadlock/livelock (how to avoid).
+
