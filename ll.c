@@ -95,9 +95,14 @@ node_t *remove(list_t* list, node_t* n)
    return d;
 }
 
-void insert_at_end(list_t* list, node_t* p) //later
+void insert_at_end(list_t* list, node_t* p) 
 {
-   
+   node_t *d = list->root;
+   while (d->next != null) {
+      d = d->next;
+   }
+   p->next = NULL;
+   d->next = p; 
 }
 
 int main(int argc, void* argv[]) 
@@ -105,6 +110,7 @@ int main(int argc, void* argv[])
     //list_t list.root = NULL;
     //list_t list.count = 0;
 	list_t list = { NULL , 0 };
+	
 	return 0;  
 }
 
