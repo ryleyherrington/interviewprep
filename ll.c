@@ -1,3 +1,4 @@
+#include <stdlib.h>
 
 //C++ version
 //std::vector<int> v;
@@ -96,13 +97,14 @@ node_t *remove(list_t* list, node_t* n)
 
 void insert_at_end(list_t* list, node_t* p) //later
 {
-   return NULL; 
+   
 }
 
 int main(int argc, void* argv[]) 
 {
-    list_t list.root = NULL;
-    list_t list.count = 0;
+    //list_t list.root = NULL;
+    //list_t list.count = 0;
+	list_t list = { NULL , 0 };
 	return 0;  
 }
 
