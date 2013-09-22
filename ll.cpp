@@ -58,11 +58,3 @@ public bool deleteNode(LLNode<Integer> head, LLNode<Integer> deletenode) {
 	return false;
 }
 
-
-int main(int argc, void *argv[]) {
-	LLNode<Integer> head = new LLNode<Integer> (1);
-	int data = 4;
-	head = insertFront(head, data);
-
-}
-
