@@ -103,6 +103,7 @@ void insert_at_end(list_t* list, node_t* p)
    }
    p->next = NULL;
    d->next = p; 
+   list->count++;
 }
 
 int main(int argc, void* argv[]) 
