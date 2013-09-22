@@ -11,11 +11,14 @@ typedef struct {
    struct node* next;
 } node_t;
 
-node_t *root = NULL;
+typedef struct {
+   node_t* root;
+   int     count;
+} list_t;
 
-void deleteall() 
+void deleteall(list_t *list) 
 {
-   node_t *d = root;
+   node_t *d = list->root;
    node_t *prev = NULL;
    while(d) {
       prev = d;
@@ -24,20 +27,35 @@ void deleteall()
    }
 }
 
-void sort()
+int compare(const void*v1, const void*v2)
 {
-   
+    node_t *p1 = (node_t*)v1;
+    node_t *p2 = (node_t*)v2;
+    return (p1->data - p2->data);
 }
 
-void insert(node_t* p)
+void sort(list_t* list)
 {
-   p->next = root;  // hang existing list from new node
-   root = p;        // hang new node from root
+   node_t* arr = (node_t*) calloc(sizeof(node_t*), list->count);
+   node_t* p = list->root; 
+   for( int i=0; i<list->count; i++) {
+      arr[i]= p;
+      p = p->next;
+   }
+   qsort(arr, list->count, sizeof(node_t*), compare); 
+
 }
 
-node_t *find(int v)
+void insert(list_t* list, node_t* p)
 {
-   node_t *p = root;
+   p->next = list->root;  // hang existing list from new node
+   list->root = p;        // hang new node from root
+   list->count++;        // hang new node from root
+}
+
+node_t *find(list_t* list, int v)
+{
+   node_t *p = list->root;
    while (p) {
       if (p->data == v)
          return p;
@@ -46,9 +64,9 @@ node_t *find(int v)
    return NULL;
 }
 
-node_t *remove(node_t* n)
+node_t *remove(list_t* list, node_t* n)
 {
-   node_t *d = root;   
+   node_t *d = list->root;   
    node_t *prev = NULL;
    if (!d)
       return NULL;
@@ -59,19 +77,22 @@ node_t *remove(node_t* n)
          return NULL;
    }      
    if (!prev) 
-      root = d->next; 
+      list->root = d->next; 
    else 
       prev->next = d->next; 
+   list->count--;
    return d;
 }
 
-void insert_at_end(node_t* p) //later
+void insert_at_end(list_t* list, node_t* p) //later
 {
    return NULL; 
 }
 
 int main(int argc, void* argv[]) 
 {
+    list_t list.root = NULL;
+    list_t list.count = 0;
 	return 0;  
 }
 
