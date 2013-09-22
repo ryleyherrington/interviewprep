@@ -43,15 +43,17 @@ void sort(list_t* list)
       p = p->next;
    }
    qsort(arr, list->count, sizeof(node_t*), compare); 
-//trying stuff out
-   node_t* b = list->root;
+
+   list->root = arr[0];
+   p = arr[0];
    for (int j=0; j<list->count; j++) {
-      if (b->next == NULL)
-         return; 
-      b->next = arr[j+1];
-      b = b->next;
+      if (j+1 == list->count)
+         p-> = NULL;
+      p->next = arr[j+1];
+      p = arr[j+1];
    }
 
+   free(arr);
 }
 
 void insert(list_t* list, node_t* p)
