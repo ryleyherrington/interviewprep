@@ -11,12 +11,6 @@ typedef struct {
    struct node* next;
 } node_t;
 
-typedef struct{
-   node_t* head;
-   node_t* tail;
-   int size;
-} ll_t ;
-
 node_t *root = NULL;
 
 void deleteall() 
@@ -78,6 +72,6 @@ void insert_at_end(node_t* p) //later
 
 int main(int argc, void* argv[]) 
 {
-  
+	return 0;  
 }
 
