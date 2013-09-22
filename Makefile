@@ -1,5 +1,5 @@
 NAME = ll.c
-OPTS = -std=c99
+OPTS = -std=c99 -w
 COMPILER = gcc
 
 default:
