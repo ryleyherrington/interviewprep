@@ -37,7 +37,7 @@ int compare(const void*v1, const void*v2)
 
 void sort(list_t* list)
 {
-   node_t* arr = (node_t*) calloc(sizeof(node_t*), list->count);
+   node_t** arr = (node_t*) calloc(sizeof(node_t*), list->count);
    node_t* p = list->root; 
    for( int i=0; i<list->count; i++) {
       arr[i]= p;
@@ -49,7 +49,7 @@ void sort(list_t* list)
    p = arr[0];
    for (int j=0; j<list->count; j++) {
       if (j+1 == list->count)
-         p-> = NULL;
+         p->next = NULL;
       p->next = arr[j+1];
       p = arr[j+1];
    }
